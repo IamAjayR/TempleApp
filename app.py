@@ -2,9 +2,12 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)  # Allow cross-origin requests
+CORS(app)  # Enable CORS
 
-# API: Temple Info
+@app.route('/')
+def home():
+    return "Temple API is running!"
+
 @app.route('/info', methods=['GET'])
 def temple_info():
     return jsonify({
@@ -14,11 +17,5 @@ def temple_info():
         "upcoming_events": ["Ethanur Kummaty 2025", "Festival 2"]
     })
 
-# API: Donations
-@app.route('/donate', methods=['POST'])
-def donate():
-    data = request.json
-    return jsonify({"message": f"Donation of {data['amount']} received for {data['purpose']}!"})
-
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=10000, debug=True)
