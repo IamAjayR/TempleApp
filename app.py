@@ -8,10 +8,10 @@ CORS(app)  # Allow cross-origin requests
 @app.route('/info', methods=['GET'])
 def temple_info():
     return jsonify({
-        "name": "Your Temple Name",
-        "history": "This temple has a rich history...",
+        "name": "Sree Thiruvilayanadu Bhagavathy Temple",
+        "history": "Thiruvilayanadu Bhagavathy Temple Ethanur is a Hindu temple dedicated to Goddess Bhagavathy, located in Ethanur village, Palakkad district of Kerala. The temple is famous for its annual Kummatti festival, which is celebrated on every year March Month. The temple also conducts a Maha Kumbabhishekam (a ritual of consecration) every 12 years. The temple also has a pond and a banyan tree.",
         "pooja_timings": "6:00 AM - 8:00 PM",
-        "upcoming_events": ["Festival 1", "Festival 2"]
+        "upcoming_events": ["Ethanur Kummaty 2025", "Festival 2"]
     })
 
 # API: Donations
